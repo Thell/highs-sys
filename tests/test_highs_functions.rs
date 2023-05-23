@@ -27,6 +27,9 @@ fn highs_functions() {
         let option_name = CString::new("output_flag").unwrap();
         Highs_setBoolOptionValue(highs, option_name.as_ptr(), 0);
 
+        let option_name = CString::new("threads").unwrap();
+        Highs_setIntOptionValue(highs, option_name.as_ptr(), 1);
+
         let numcol: usize = 2;
         let numrow: usize = 3;
         let nnz: usize = 5;
